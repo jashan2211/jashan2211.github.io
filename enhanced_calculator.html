@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Mortgage Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .calculator { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        h1 { text-align: center; }
+        label { display: block; margin-top: 10px; }
+        input[type="number"] { width: 100%; padding: 10px; margin-top: 5px; }
+        button { background-color: #4CAF50; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        .result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Enhanced Mortgage Calculator</h1>
+        <label for="homePrice">Home Price:</label>
+        <input type="number" id="homePrice" placeholder="Enter home price">
+
+        <label for="downPayment">Down Payment:</label>
+        <input type="number" id="downPayment" placeholder="Enter down payment">
+
+        <label for="loanTerm">Loan Term (years):</label>
+        <input type="number" id="loanTerm" placeholder="Enter loan term">
+
+        <label for="interestRate">Interest Rate (%):</label>
+        <input type="number" id="interestRate" placeholder="Enter interest rate">
+
+        <label for="propertyTax">Annual Property Tax:</label>
+        <input type="number" id="propertyTax" placeholder="Enter annual property tax">
+
+        <label for="insurance">Annual Insurance:</label>
+        <input type="number" id="insurance" placeholder="Enter annual insurance">
+
+        <label for="pmi">Monthly PMI:</label>
+        <input type="number" id="pmi" placeholder="Enter monthly PMI">
+
+        <label for="hoa">Monthly HOA Fees:</label>
+        <input type="number" id="hoa" placeholder="Enter monthly HOA fees">
+
+        <label for="closingCosts">Closing Costs:</label>
+        <input type="number" id="closingCosts" placeholder="Enter closing costs">
+
+        <button onclick="calculateMortgage()">Calculate</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateMortgage() {
+            const homePrice = parseFloat(document.getElementById('homePrice').value);
+            const downPayment = parseFloat(document.getElementById('downPayment').value);
+            const loanTerm = parseFloat(document.getElementById('loanTerm').value) * 12; // months
+            const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12; // monthly
+            const propertyTax = parseFloat(document.getElementById('propertyTax').value) / 12; // monthly
+            const insurance = parseFloat(document.getElementById('insurance').value) / 12; // monthly
+            const pmi = parseFloat(document.getElementById('pmi').value);
+            const hoa = parseFloat(document.getElementById('hoa').value);
+            const closingCosts = parseFloat(document.getElementById('closingCosts').value);
+
+            const loanAmount = homePrice - downPayment;
+            const monthlyPayment = (loanAmount * interestRate) / (1 - Math.pow(1 + interestRate, -loanTerm));
+            const totalMonthlyPayment = monthlyPayment + propertyTax + insurance + pmi + hoa;
+
+            document.getElementById('result').innerHTML = 
+                `<h2>Monthly Payment: $${totalMonthlyPayment.toFixed(2)}</h2>` + 
+                `<p>Loan Amount: $${loanAmount.toFixed(2)}</p>` + 
+                `<p>Closing Costs: $${closingCosts.toFixed(2)}</p>`;
+        }
+    </script>
+</body>
+</html>
