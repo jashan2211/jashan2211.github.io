@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Mac Randhawa - Edmonton Real Estate Expert</title>
+    <meta name="description" content="Contact Mac Randhawa for expert real estate services in Edmonton. Professional guidance for buying and selling homes. Call 780-245-2966.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>Mac Randhawa</h2>
+                <p>Edmonton Realtor</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="listings.html" class="nav-link">Listings</a></li>
+                <li><a href="neighborhoods.html" class="nav-link">Neighborhoods</a></li>
+                <li><a href="mortgage-calculator.html" class="nav-link">Mortgage Calculator</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="contact-info">
+                <a href="tel:7802452966" class="phone-btn">
+                    <i class="fas fa-phone"></i> 780-245-2966
+                </a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Mac Randhawa</h1>
+            <p>Ready to start your real estate journey? Get in touch for expert guidance in Edmonton</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="page-content">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Contact Form -->
+                <div class="form-container">
+                    <h2>Send Me a Message</h2>
+                    <p>Fill out the form below and I'll get back to you within 24 hours.</p>
+                    
+                    <div id="form-errors" class="alert alert-error" style="display: none;"></div>
+                    
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select Budget Range</option>
+                                    <option value="under-300k">Under $300,000</option>
+                                    <option value="300k-400k">$300,000 - $400,000</option>
+                                    <option value="400k-500k">$400,000 - $500,000</option>
+                                    <option value="500k-750k">$500,000 - $750,000</option>
+                                    <option value="750k-1m">$750,000 - $1,000,000</option>
+                                    <option value="over-1m">Over $1,000,000</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="propertyType">Property Type</label>
+                                <select id="propertyType" name="propertyType">
+                                    <option value="">Select Property Type</option>
+                                    <option value="house">Single Family House</option>
+                                    <option value="condo">Condominium</option>
+                                    <option value="townhouse">Townhouse</option>
+                                    <option value="duplex">Duplex</option>
+                                    <option value="investment">Investment Property</option>
+                                    <option value="land">Land</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="timeline">Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">When are you looking to buy/sell?</option>
+                                <option value="immediately">Immediately</option>
+                                <option value="1-3-months">1-3 months</option>
+                                <option value="3-6-months">3-6 months</option>
+                                <option value="6-12-months">6-12 months</option>
+                                <option value="over-1-year">Over 1 year</option>
+                                <option value="just-browsing">Just browsing</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your real estate needs, preferred neighborhoods, or any questions you have..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" id="submit-btn" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <div class="contact-card">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h4>Call or Text</h4>
+                                    <a href="tel:7802452966">780-245-2966</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:mac@edmontonrealty.ca">mac@edmontonrealty.ca</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Serving</h4>
+                                    <p>Edmonton & Surrounding Areas</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Availability</h4>
+                                    <p>7 Days a Week<br>8:00 AM - 9:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="credentials-card">
+                        <h3>Professional Credentials</h3>
+                        <div class="credentials">
+                            <div class="credential">
+                                <i class="fas fa-certificate"></i>
+                                <span>Licensed REALTOR®</span>
+                            </div>
+                            <div class="credential">
+                                <i class="fas fa-building"></i>
+                                <span>REMAX Excellence Member</span>
+                            </div>
+                            <div class="credential">
+                                <i class="fas fa-award"></i>
+                                <span>Top Producer 2023</span>
+                            </div>
+                            <div class="credential">
+                                <i class="fas fa-star"></i>
+                                <span>Client Choice Award Winner</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="response-card">
+                        <h3>Response Guarantee</h3>
+                        <div class="guarantee-items">
+                            <div class="guarantee-item">
+                                <i class="fas fa-reply"></i>
+                                <span>Response within 2 hours during business hours</span>
+                            </div>
+                            <div class="guarantee-item">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>Same-day showing appointments available</span>
+                            </div>
+                            <div class="guarantee-item">
+                                <i class="fas fa-handshake"></i>
+                                <span>No obligation consultation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Areas -->
+            <div class="service-areas">
+                <h2>Edmonton Areas I Serve</h2>
+                <div class="areas-grid">
+                    <div class="area-item">Downtown Edmonton</div>
+                    <div class="area-item">Old Strathcona</div>
+                    <div class="area-item">Westmount</div>
+                    <div class="area-item">Glenora</div>
+                    <div class="area-item">Riverbend</div>
+                    <div class="area-item">Summerside</div>
+                    <div class="area-item">Terwillegar</div>
+                    <div class="area-item">Mill Woods</div>
+                    <div class="area-item">Castledowns</div>
+                    <div class="area-item">Sherwood Park</div>
+                    <div class="area-item">St. Albert</div>
+                    <div class="area-item">Beaumont</div>
+                    <div class="area-item">Leduc</div>
+                    <div class="area-item">Fort Saskatchewan</div>
+                    <div class="area-item">Spruce Grove</div>
+                    <div class="area-item">Stony Plain</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mac Randhawa</h3>
+                    <p>Professional Real Estate Services</p>
+                    <p>Edmonton, Alberta</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> 780-245-2966</p>
+                        <p><i class="fas fa-envelope"></i> mac@edmontonrealty.ca</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html">Home Buying</a></li>
+                        <li><a href="index.html">Home Selling</a></li>
+                        <li><a href="index.html">Market Analysis</a></li>
+                        <li><a href="index.html">Investment Properties</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                        <li><a href="neighborhoods.html">Neighborhood Guide</a></li>
+                        <li><a href="listings.html">Property Listings</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Edmonton Areas</h4>
+                    <ul>
+                        <li><a href="neighborhoods.html#downtown">Downtown</a></li>
+                        <li><a href="neighborhoods.html#old-strathcona">Old Strathcona</a></li>
+                        <li><a href="neighborhoods.html#westmount">Westmount</a></li>
+                        <li><a href="neighborhoods.html#riverbend">Riverbend</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mac Randhawa Real Estate. All rights reserved. | Edmonton, Alberta Real Estate Professional</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <style>
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-card,
+        .credentials-card,
+        .response-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-card h3,
+        .credentials-card h3,
+        .response-card h3 {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-method i {
+            font-size: 1.5rem;
+            color: #2c5aa0;
+            width: 30px;
+        }
+        
+        .contact-method h4 {
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-method a {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+        
+        .credentials {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .credential {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .credential i {
+            color: #2c5aa0;
+            width: 20px;
+        }
+        
+        .guarantee-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .guarantee-item i {
+            color: #27ae60;
+            width: 20px;
+        }
+        
+        .service-areas {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .service-areas h2 {
+            color: #333;
+            margin-bottom: 2rem;
+        }
+        
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .area-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            color: #333;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-error {
+            background: #fee;
+            color: #c33;
+            border: 1px solid #fcc;
+        }
+        
+        .alert-success {
+            background: #efe;
+            color: #363;
+            border: 1px solid #cfc;
+        }
+        
+        .alert ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .areas-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</body>
+</html>
