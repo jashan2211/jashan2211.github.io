@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator - Mac Randhawa Edmonton Realtor</title>
+    <meta name="description" content="Calculate your monthly mortgage payments with Mac Randhawa's mortgage calculator. Get accurate estimates for Edmonton real estate purchases.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>Mac Randhawa</h2>
+                <p>Edmonton Realtor</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="listings.html" class="nav-link">Listings</a></li>
+                <li><a href="neighborhoods.html" class="nav-link">Neighborhoods</a></li>
+                <li><a href="mortgage-calculator.html" class="nav-link">Mortgage Calculator</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="contact-info">
+                <a href="tel:7802452966" class="phone-btn">
+                    <i class="fas fa-phone"></i> 780-245-2966
+                </a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Mortgage Calculator</h1>
+            <p>Calculate your monthly payments and see what you can afford in Edmonton</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="page-content">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <h2>Calculate Your Mortgage</h2>
+                    <form id="mortgage-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="homePrice">Home Price</label>
+                                <input type="number" id="homePrice" name="homePrice" value="400000" min="50000" max="5000000" step="1000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="downPayment">Down Payment</label>
+                                <input type="number" id="downPayment" name="downPayment" value="80000" min="0" step="1000" required>
+                                <small>Percentage: <span id="downPaymentPercent">20.0%</span></small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="interestRate">Interest Rate (%)</label>
+                                <input type="number" id="interestRate" name="interestRate" value="5.5" min="0.1" max="15" step="0.1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="amortization">Amortization (Years)</label>
+                                <select id="amortization" name="amortization" required>
+                                    <option value="15">15 years</option>
+                                    <option value="20">20 years</option>
+                                    <option value="25" selected>25 years</option>
+                                    <option value="30">30 years</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <h3>Additional Monthly Costs</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="propertyTax">Property Tax (Annual)</label>
+                                <input type="number" id="propertyTax" name="propertyTax" value="4000" min="0" step="100">
+                            </div>
+                            <div class="form-group">
+                                <label for="insurance">Home Insurance (Annual)</label>
+                                <input type="number" id="insurance" name="insurance" value="1200" min="0" step="50">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="calculator-results">
+                    <h2>Payment Breakdown</h2>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <h4>Loan Amount</h4>
+                            <div class="result-value" id="loanAmount">$320,000</div>
+                        </div>
+                        <div class="result-item">
+                            <h4>Monthly Payment</h4>
+                            <div class="result-value primary" id="monthlyPayment">$1,957</div>
+                            <small>Principal & Interest</small>
+                        </div>
+                        <div class="result-item">
+                            <h4>Total Monthly Cost</h4>
+                            <div class="result-value highlight" id="totalMonthlyPayment">$2,390</div>
+                            <small>Including taxes & insurance</small>
+                        </div>
+                        <div class="result-item">
+                            <h4>Total Interest</h4>
+                            <div class="result-value" id="totalInterest">$267,100</div>
+                        </div>
+                        <div class="result-item">
+                            <h4>Total Cost</h4>
+                            <div class="result-value" id="totalCost">$587,100</div>
+                        </div>
+                    </div>
+                    
+                    <div class="affordability-tips">
+                        <h3>Affordability Guidelines</h3>
+                        <ul>
+                            <li><strong>Gross Debt Service (GDS):</strong> Should not exceed 32% of gross monthly income</li>
+                            <li><strong>Total Debt Service (TDS):</strong> Should not exceed 40% of gross monthly income</li>
+                            <li><strong>Minimum Down Payment:</strong> 5% for homes under $500k, 10% for portion over $500k</li>
+                            <li><strong>CMHC Insurance:</strong> Required for down payments under 20%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Information -->
+            <div class="calculator-info">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-percent"></i>
+                        <h3>Current Interest Rates</h3>
+                        <p>Interest rates vary by lender and term. As of 2024, rates typically range from 5.0% to 7.0%. Contact Mac for current rate information from preferred lenders.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Mortgage Insurance</h3>
+                        <p>If your down payment is less than 20%, you'll need mortgage default insurance (CMHC). This protects the lender and is added to your monthly payments.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Additional Costs</h3>
+                        <p>Don't forget closing costs (1.5-4% of purchase price), home inspection, legal fees, and moving expenses when budgeting for your home purchase.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="calculator-cta">
+                <h2>Ready to Get Pre-Approved?</h2>
+                <p>Contact Mac Randhawa for personalized mortgage advice and pre-approval assistance</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Contact Mac</a>
+                    <a href="tel:7802452966" class="btn btn-secondary">Call 780-245-2966</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mac Randhawa</h3>
+                    <p>Professional Real Estate Services</p>
+                    <p>Edmonton, Alberta</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> 780-245-2966</p>
+                        <p><i class="fas fa-envelope"></i> mac@edmontonrealty.ca</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html">Home Buying</a></li>
+                        <li><a href="index.html">Home Selling</a></li>
+                        <li><a href="index.html">Market Analysis</a></li>
+                        <li><a href="index.html">Investment Properties</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                        <li><a href="neighborhoods.html">Neighborhood Guide</a></li>
+                        <li><a href="listings.html">Property Listings</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Edmonton Areas</h4>
+                    <ul>
+                        <li><a href="neighborhoods.html#downtown">Downtown</a></li>
+                        <li><a href="neighborhoods.html#old-strathcona">Old Strathcona</a></li>
+                        <li><a href="neighborhoods.html#westmount">Westmount</a></li>
+                        <li><a href="neighborhoods.html#riverbend">Riverbend</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mac Randhawa Real Estate. All rights reserved. | Edmonton, Alberta Real Estate Professional</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <style>
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .calculator-form,
+        .calculator-results {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .result-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .result-item h4 {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .result-value.primary {
+            color: #2c5aa0;
+            font-size: 2rem;
+        }
+        
+        .result-value.highlight {
+            color: #e74c3c;
+            font-size: 1.8rem;
+        }
+        
+        .result-item small {
+            color: #666;
+            font-size: 0.8rem;
+            display: block;
+            margin-top: 0.25rem;
+        }
+        
+        .affordability-tips {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        
+        .affordability-tips h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .affordability-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .affordability-tips li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .affordability-tips li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .info-card i {
+            font-size: 2rem;
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+        
+        .info-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .calculator-cta {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .calculator-cta h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .calculator-cta p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</body>
+</html>

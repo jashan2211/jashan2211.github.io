@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings - Mac Randhawa Edmonton Real Estate</title>
+    <meta name="description" content="Browse current property listings in Edmonton with Mac Randhawa. Find your dream home in top Edmonton neighborhoods.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>Mac Randhawa</h2>
+                <p>Edmonton Realtor</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="listings.html" class="nav-link">Listings</a></li>
+                <li><a href="neighborhoods.html" class="nav-link">Neighborhoods</a></li>
+                <li><a href="mortgage-calculator.html" class="nav-link">Mortgage Calculator</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="contact-info">
+                <a href="tel:7802452966" class="phone-btn">
+                    <i class="fas fa-phone"></i> 780-245-2966
+                </a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Property Listings</h1>
+            <p>Explore available properties in Edmonton and surrounding areas</p>
+        </div>
+    </section>
+
+    <!-- Search and Filters -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="search-filters">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by neighborhood, address, or MLS number...">
+                </div>
+                <div class="filter-controls">
+                    <select id="priceFilter">
+                        <option value="all">All Prices</option>
+                        <option value="0-300000">Under $300,000</option>
+                        <option value="300000-400000">$300,000 - $400,000</option>
+                        <option value="400000-500000">$400,000 - $500,000</option>
+                        <option value="500000-750000">$500,000 - $750,000</option>
+                        <option value="750000-1000000">$750,000 - $1,000,000</option>
+                        <option value="1000000-99999999">$1,000,000+</option>
+                    </select>
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="house">House</option>
+                        <option value="condo">Condominium</option>
+                        <option value="townhouse">Townhouse</option>
+                        <option value="duplex">Duplex</option>
+                    </select>
+                    <select id="bedroomFilter">
+                        <option value="all">Any Bedrooms</option>
+                        <option value="1">1+ Bedroom</option>
+                        <option value="2">2+ Bedrooms</option>
+                        <option value="3">3+ Bedrooms</option>
+                        <option value="4">4+ Bedrooms</option>
+                        <option value="5">5+ Bedrooms</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Listings Grid -->
+    <section class="page-content">
+        <div class="container">
+            <div class="listings-header">
+                <h2>Featured Properties</h2>
+                <div class="listings-count">
+                    <span id="listingsCount">12</span> properties available
+                </div>
+            </div>
+            
+            <div id="properties-grid" class="properties-grid">
+                <!-- Properties will be loaded here by JavaScript -->
+            </div>
+            
+            <!-- MLS Integration Notice -->
+            <div class="mls-integration">
+                <h3>Complete MLS Access</h3>
+                <p>The properties shown here are just a sample. As your realtor, I have access to the complete MLS database with thousands of current listings. Contact me for:</p>
+                <ul>
+                    <li>Full MLS search with real-time updates</li>
+                    <li>Private listings not yet on the market</li>
+                    <li>Personalized property recommendations</li>
+                    <li>Detailed property reports and history</li>
+                    <li>Scheduled private viewings</li>
+                </ul>
+                <div class="mls-cta">
+                    <a href="contact.html" class="btn btn-primary">Get Full MLS Access</a>
+                    <a href="tel:7802452966" class="btn btn-secondary">Call for Private Listings</a>
+                </div>
+            </div>
+            
+            <!-- Market Stats -->
+            <div class="market-stats">
+                <h3>Edmonton Market Overview</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h4>Average Home Price</h4>
+                        <div class="stat-value">$425,000</div>
+                        <div class="stat-change positive">+3.2% from last year</div>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Days on Market</h4>
+                        <div class="stat-value">28 days</div>
+                        <div class="stat-change">Average selling time</div>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Active Listings</h4>
+                        <div class="stat-value">2,847</div>
+                        <div class="stat-change">Properties available</div>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Price per Sq Ft</h4>
+                        <div class="stat-value">$285</div>
+                        <div class="stat-change positive">+2.8% from last year</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mac Randhawa</h3>
+                    <p>Professional Real Estate Services</p>
+                    <p>Edmonton, Alberta</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> 780-245-2966</p>
+                        <p><i class="fas fa-envelope"></i> mac@edmontonrealty.ca</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html">Home Buying</a></li>
+                        <li><a href="index.html">Home Selling</a></li>
+                        <li><a href="index.html">Market Analysis</a></li>
+                        <li><a href="index.html">Investment Properties</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                        <li><a href="neighborhoods.html">Neighborhood Guide</a></li>
+                        <li><a href="listings.html">Property Listings</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Edmonton Areas</h4>
+                    <ul>
+                        <li><a href="neighborhoods.html#downtown">Downtown</a></li>
+                        <li><a href="neighborhoods.html#old-strathcona">Old Strathcona</a></li>
+                        <li><a href="neighborhoods.html#westmount">Westmount</a></li>
+                        <li><a href="neighborhoods.html#riverbend">Riverbend</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mac Randhawa Real Estate. All rights reserved. | Edmonton, Alberta Real Estate Professional</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <style>
+        .filters-section {
+            padding: 2rem 0;
+            background: #f8f9fa;
+        }
+        
+        .search-filters {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid #e9ecef;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #2c5aa0;
+        }
+        
+        .filter-controls {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .filter-controls select {
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+            transition: border-color 0.3s ease;
+        }
+        
+        .filter-controls select:focus {
+            outline: none;
+            border-color: #2c5aa0;
+        }
+        
+        .listings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .listings-count {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .property-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .property-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .property-card:hover .property-image img {
+            transform: scale(1.05);
+        }
+        
+        .property-price {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #2c5aa0;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .property-details {
+            padding: 1.5rem;
+        }
+        
+        .property-details h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .property-neighborhood {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .property-features {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .property-features span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .property-btn {
+            width: 100%;
+        }
+        
+        .no-results {
+            text-align: center;
+            color: #666;
+            font-size: 1.2rem;
+            padding: 3rem;
+        }
+        
+        .mls-integration {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .mls-integration h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .mls-integration p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mls-integration ul {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        
+        .mls-integration li {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+        
+        .mls-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .market-stats {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+        }
+        
+        .market-stats h3 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-item h4 {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-change {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .stat-change.positive {
+            color: #27ae60;
+        }
+        
+        .stat-change.negative {
+            color: #e74c3c;
+        }
+        
+        @media (max-width: 768px) {
+            .search-filters {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .filter-controls {
+                grid-template-columns: 1fr;
+            }
+            
+            .listings-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mls-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <script>
+        // Add some sample properties to the existing PropertyFilter
+        document.addEventListener('DOMContentLoaded', function() {
+            const propertyFilter = new PropertyFilter();
+            
+            // Expanded sample property data
+            propertyFilter.properties = [
+                {
+                    address: "1234 Maple Street",
+                    neighborhood: "Westmount",
+                    price: 450000,
+                    bedrooms: 3,
+                    bathrooms: 2.5,
+                    sqft: 1250,
+                    type: "house",
+                    image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                },
+                {
+                    address: "456 Oak Avenue",
+                    neighborhood: "Riverbend",
+                    price: 320000,
+                    bedrooms: 2,
+                    bathrooms: 2,
+                    sqft: 950,
+                    type: "condo",
+                    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                },
+                {
+                    address: "789 Pine Road",
+                    neighborhood: "Glenora",
+                    price: 680000,
+                    bedrooms: 4,
+                    bathrooms: 3,
+                    sqft: 1800,
+                    type: "house",
+                    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                },
+                {
+                    address: "321 Elm Crescent",
+                    neighborhood: "Old Strathcona",
+                    price: 385000,
+                    bedrooms: 2,
+                    bathrooms: 1.5,
+                    sqft: 1100,
+                    type: "townhouse",
+                    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                },
+                {
+                    address: "567 Cedar Way",
+                    neighborhood: "Summerside",
+                    price: 525000,
+                    bedrooms: 4,
+                    bathrooms: 3,
+                    sqft: 1650,
+                    type: "house",
+                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                },
+                {
+                    address: "890 Birch Lane",
+                    neighborhood: "Terwillegar",
+                    price: 295000,
+                    bedrooms: 1,
+                    bathrooms: 1,
+                    sqft: 750,
+                    type: "condo",
+                    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                },
+                {
+                    address: "1122 Willow Drive",
+                    neighborhood: "Mill Woods",
+                    price: 365000,
+                    bedrooms: 3,
+                    bathrooms: 2,
+                    sqft: 1150,
+                    type: "duplex",
+                    image: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                },
+                {
+                    address: "1555 Aspen Court",
+                    neighborhood: "Castledowns",
+                    price: 425000,
+                    bedrooms: 3,
+                    bathrooms: 2.5,
+                    sqft: 1300,
+                    type: "townhouse",
+                    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                },
+                {
+                    address: "2233 Spruce Place",
+                    neighborhood: "Downtown",
+                    price: 750000,
+                    bedrooms: 2,
+                    bathrooms: 2.5,
+                    sqft: 1400,
+                    type: "condo",
+                    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                },
+                {
+                    address: "3344 Poplar Ridge",
+                    neighborhood: "Sherwood Park",
+                    price: 485000,
+                    bedrooms: 4,
+                    bathrooms: 2.5,
+                    sqft: 1550,
+                    type: "house",
+                    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                },
+                {
+                    address: "4455 Fir Heights",
+                    neighborhood: "St. Albert",
+                    price: 615000,
+                    bedrooms: 5,
+                    bathrooms: 4,
+                    sqft: 2100,
+                    type: "house",
+                    image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                },
+                {
+                    address: "5566 Larch Boulevard",
+                    neighborhood: "Beaumont",
+                    price: 395000,
+                    bedrooms: 3,
+                    bathrooms: 2,
+                    sqft: 1250,
+                    type: "duplex",
+                    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                }
+            ];
+            
+            propertyFilter.filteredProperties = propertyFilter.properties;
+            propertyFilter.renderProperties();
+            
+            // Update listings count
+            document.getElementById('listingsCount').textContent = propertyFilter.properties.length;
+        });
+    </script>
+</body>
+</html>
